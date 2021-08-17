@@ -1,5 +1,5 @@
 {
-    "name": "tyrellsys/cakephp3-aws-ses-transport",
+    "name": "toggenation/cakephp-aws-ses-transport",
     "description": "AwsSesTransport plugin for CakePHP4",
     "type": "cakephp-plugin",
     "require": {
