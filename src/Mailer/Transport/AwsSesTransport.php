@@ -1,5 +1,6 @@
 <?php
-namespace CakePHP3AwsSesTransport\Mailer\Transport;
+
+namespace CakePHPAwsSesTransport\Mailer\Transport;
 
 use Cake\Mailer\AbstractTransport;
 use Cake\Mailer\Message;
@@ -93,7 +94,7 @@ class AwsSesTransport extends AbstractTransport
         $this->_connect();
 
         $headers = $message->getHeaders(['X-BounceTo']);
-        if (!empty($headers["X-BounceTo"])){
+        if (!empty($headers["X-BounceTo"])) {
             $message->setReturnPath($headers["X-BounceTo"]);
             unset($headers['X-BounceTo']);
             $message->setHeaders($headers);
@@ -125,14 +126,14 @@ class AwsSesTransport extends AbstractTransport
         } catch (\Exception $e) {
             throw new SocketException($e->getMessage());
         }
-        
-        if(empty($result)) {
+
+        if (empty($result)) {
             throw new SocketException();
         }
 
         $this->_lastResponse = $result;
         $results = $result->toArray();
-        if(!isset($results['@metadata']['statusCode']) || ($results['@metadata']['statusCode'] != 200)) {
+        if (!isset($results['@metadata']['statusCode']) || ($results['@metadata']['statusCode'] != 200)) {
             throw new SocketException();
         }
 

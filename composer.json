@@ -11,12 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CakePHP3AwsSesTransport\\": "src"
+            "CakePHPAwsSesTransport\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CakePHP3AwsSesTransport\\Test\\": "tests",
+            "CakePHPAwsSesTransport\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
